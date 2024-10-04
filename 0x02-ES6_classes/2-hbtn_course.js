@@ -10,6 +10,10 @@ export default class HolbertonCourse {
    * @param {String[]} students - The names of students in the course.
    */
   constructor(name, length, students) {
+    if (typeof name !== 'string' || typeof length !== 'number' ||
+      typeof students !== 'array' ||
+      !value.every((student) => typeof student === 'string'))
+        throw new TypeError('Incorrect attribute type');
     this._name = name;
     this._length = length;
     this._students = students;
