@@ -11,8 +11,8 @@ export default class HolbertonCourse {
    */
   constructor(name, length, students) {
     if (typeof name !== 'string' || typeof length !== 'number' ||
-      typeof students !== 'array' ||
-      !value.every((student) => typeof student === 'string'))
+      !(students instanceof Array) ||
+      !students.every((student) => typeof student === 'string'))
         throw new TypeError('Incorrect attribute type');
     this._name = name;
     this._length = length;
