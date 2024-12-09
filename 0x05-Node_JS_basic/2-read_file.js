@@ -2,7 +2,7 @@ const fs = require('fs');
 
 function countStudents(filename) {
   try {
-    if (!fs.existsSync(path)) {
+    if (!fs.existsSync(filename)) {
       throw Error('Cannot load the database');
     }
     const fileContent = fs.readFileSync(filename);
