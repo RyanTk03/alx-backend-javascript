@@ -2,11 +2,11 @@ const fs = require('fs');
 const { EOL } = require('os');
 
 function countStudents(filename) {
-  return new Promise((resolve, reject) => {
+  return new Promise(function (resolve, reject) {
     if (!fs.existsSync(filename)) {
       return reject('Cannot load the database');
     }
-    fs.readFile(filename, (err, data) => {
+    fs.readFile(filename, function (err, data) {
       if (err) {
         return reject(err.message);
       }
@@ -23,7 +23,7 @@ function countStudents(filename) {
       console.log(`Number of students: ${students.length}`);
       console.log(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}`);
       console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
-      return resolve({students, csStudents, sweStudents});
+      return resolve({ students, csStudents, sweStudents });
     });
   });
 }
