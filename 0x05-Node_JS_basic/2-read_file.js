@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { EOL } = require('os');
 
 function countStudents(filename) {
   try {
@@ -6,7 +7,7 @@ function countStudents(filename) {
       throw Error('Cannot load the database');
     }
     const fileContent = fs.readFileSync(filename).toString();
-    const students = fileContent.split('\r\n')
+    const students = fileContent.split(EOL)
       .map((studentLine) => studentLine.split(','))
       .filter((studentData) => studentData.length === 4 && studentData[0] !== 'firstname');
     const csStudents = students
@@ -23,3 +24,4 @@ function countStudents(filename) {
     throw error;
   }
 }
+
