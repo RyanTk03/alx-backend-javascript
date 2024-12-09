@@ -2,7 +2,7 @@ const express = require('http');
 const PORT = 1245;
 const app = express();
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.send('Hello ALX!');

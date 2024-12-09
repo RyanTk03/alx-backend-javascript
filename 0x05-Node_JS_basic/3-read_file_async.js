@@ -6,7 +6,7 @@ function countStudents(filename) {
     if (!fs.existsSync(filename)) {
       return reject(new Error('Cannot load the database'));
     }
-    fs.readFile(filename, (err, data) => {
+    return fs.readFile(filename, (err, data) => {
       if (err) {
         return reject(new Error(err.message));
       }
@@ -23,9 +23,8 @@ function countStudents(filename) {
       console.log(`Number of students: ${students.length}`);
       console.log(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}`);
       console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
-      return resolve({ students, csStudents, sweStudents });
+      resolve({ students, csStudents, sweStudents });
     });
-    return;
   });
 }
 
