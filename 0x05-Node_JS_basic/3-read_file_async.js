@@ -2,13 +2,13 @@ const fs = require('fs');
 const { EOL } = require('os');
 
 function countStudents(filename) {
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     if (!fs.existsSync(filename)) {
-      return reject('Cannot load the database');
+      return reject(new Error('Cannot load the database'));
     }
-    fs.readFile(filename, function (err, data) {
+    fs.readFile(filename, (err, data) => {
       if (err) {
-        return reject(err.message);
+        return reject(new Error(err.message));
       }
       const students = data.toString().split(EOL)
         .map((studentLine) => studentLine.split(','))
