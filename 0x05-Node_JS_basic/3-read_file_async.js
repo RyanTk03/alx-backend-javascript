@@ -23,9 +23,9 @@ function countStudents(filename) {
       console.log(`Number of students: ${students.length}`);
       console.log(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}`);
       console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
-      return resolve();
+      return resolve({students, csStudents, sweStudents});
     });
   });
 }
 
-module.exports = { countStudents };
+module.exports = countStudents;

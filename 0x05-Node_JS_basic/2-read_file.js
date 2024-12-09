@@ -25,4 +25,4 @@ function countStudents(filename) {
   }
 }
 
-module.exports = { countStudents };
+module.exports = countStudents;

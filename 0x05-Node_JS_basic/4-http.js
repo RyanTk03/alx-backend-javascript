@@ -6,8 +6,8 @@ const app = http.createServer(function (req, res) {
   re.end();
 });
 
-app.listen(PORT, function (req, res) {
+app.listen(PORT, function () {
   console.log('...');
 });
 
-module.exports = { app };
+module.exports = app;
