@@ -25,6 +25,7 @@ function countStudents(filename) {
       console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
       return resolve({ students, csStudents, sweStudents });
     });
+    return;
   });
 }
 
